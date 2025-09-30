@@ -1,8 +1,8 @@
 name: Quarterly Slack and Customer Repo Audit
 on:
   schedule:
-    #- cron: 0 0 1 */3 *
-    - cron: * * * * *
+    #- cron: '0 0 1 */3 *'
+    - cron: * * * * 
 
 jobs:
   create_issue:
@@ -12,7 +12,7 @@ jobs:
       issues: write
     steps:
       - name: Create Quarterly Slack and Customer Repo Audit Issue
-        run:
+        run: |
           new_issue_url=$(gh issue create \
             --title "$TITLE" \
             --assignee "$ASSIGNEES" \
@@ -34,5 +34,3 @@ jobs:
 
             - [ ] Repository access list
             - [ ] Slack channels access list
-            
-          
