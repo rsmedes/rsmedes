@@ -1,9 +1,8 @@
 name: Quarterly Slack and Customer Repo Audit
 on:
   schedule:
-    #- cron: '0 0 1 */3 *'
-    - cron: * * * * 
-
+    # - cron: '0 0 1 */3 *'  # Quarterly (first day of every third month at midnight)
+    - cron: '0 * * * *'      # Every hour, for testing
 jobs:
   create_issue:
     name: Quarterly Slack and Customer Repo Audit
