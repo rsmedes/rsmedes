@@ -1,7 +1,8 @@
 name: Quarterly Slack and Customer Repo Audit
 on:
   schedule:
-    - cron: 0 0 1 */3 *
+    #- cron: 0 0 1 */3 *
+    - cron: * * * * *
 
 jobs:
   create_issue:
