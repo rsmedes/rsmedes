@@ -1,0 +1,39 @@
+name: Quarterly Slack and Customer Repo Audit
+on:
+  schedule:
+    - cron: 0 0 1 */3 *
+
+jobs:
+  create_issue:
+    name: Quarterly Slack and Customer Repo Audit
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Create Quarterly Slack and Customer Repo Audit Issue
+        run:
+          new_issue_url=$(gh issue create \
+            --title "$TITLE" \
+            --assignee "$ASSIGNEES" \
+            --label "$LABELS" \
+            --body "$BODY")
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          TITLE: Quarterly Audit Report 
+          ASSIGNEES: monalisa,rsmedes
+          LABELS: quarterly-audit
+          BODY: |
+            ### Quarterly Audit Report
+            Access to all GH customer resources is granted on an as-needed basis. 
+
+            Request for list of all members with an {customer}.com email address within 7 business days.
+
+            The audit should be in a spreadsheet format as to allow cross-company reconciliation.
+
+            - [ ] Repository access list
+            - [ ] Slack channels access list
+            
+          
+          PINNED: false
+          CLOSE_PREVIOUS: false
