@@ -35,5 +35,3 @@ jobs:
             - [ ] Slack channels access list
             
           
-          PINNED: false
-          CLOSE_PREVIOUS: false
