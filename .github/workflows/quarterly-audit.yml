@@ -21,7 +21,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           TITLE: Quarterly Audit Report 
-          ASSIGNEES: monalisa,rsmedes
+          ASSIGNEES: rsmedes
           LABELS: quarterly-audit
           BODY: |
             ### Quarterly Audit Report
