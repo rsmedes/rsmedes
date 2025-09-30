@@ -27,7 +27,7 @@ jobs:
             ### Quarterly Audit Report
             Access to all GH customer resources is granted on an as-needed basis. 
 
-            Request for list of all members with an {customer}.com email address within 7 business days.
+            Request for list of all members with a [CUSTOMER_NAME].com email address within 7 business days.
 
             The audit should be in a spreadsheet format as to allow cross-company reconciliation.
 
